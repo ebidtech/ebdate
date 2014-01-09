@@ -39,7 +39,7 @@ require 'vendor/autoload.php';
 
 ## Usage ##
 
-
+Have a look on [tests as example](tests/EBT/EBDate/Tests/EBDateTimeTest.php).
 
 ## Contributing ##
 
