@@ -1,4 +1,4 @@
-# EBDATE #
+# EBDate #
 
 Simple wrapper around DateTime.
 
