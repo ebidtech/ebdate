@@ -28,7 +28,7 @@ class EBDateTime extends DateTime
     {
         $timezone === null
             ? parent::__construct($time)
-            : parent::__construct($time, self::safeCreateDateTimeZone($timezone));
+            : parent::__construct($time, static::safeCreateDateTimeZone($timezone));
     }
 
     /*
@@ -81,21 +81,39 @@ class EBDateTime extends DateTime
      *
      * @return EBDateTime
      */
-    public static function instance(DateTime $dateTime)
+    public static function fromDateTime(DateTime $dateTime)
     {
-        return new static($dateTime->format(self::getDateTimeFormat()), $dateTime->getTimezone());
+        return new static($dateTime->format(static::getDateTimeFormat()), $dateTime->getTimezone());
     }
 
+    /**
+     * @param string $format
+     * @param string $time
+     *
+     * @return EBDateTime
+     */
+    public static function createFromFormatUTC($format, $time)
+    {
+        return static::createFromFormat($format, $time, self::safeCreateDateTimeZoneUTC());
+    }
+
+    /**
+     * @param string $format
+     * @param string $time
+     * @param mixed   $timezone
+     *
+     * @return EBDateTime
+     *
+     * @throws InvalidArgumentException
+     */
     public static function createFromFormat($format, $time, $timezone = null)
     {
-        if ($timezone !== null) {
-            $dateTime = parent::createFromFormat($format, $time, self::safeCreateDateTimeZone($timezone));
-        } else {
-            $dateTime = parent::createFromFormat($format, $time);
-        }
+        $dateTime = $timezone === null
+            ? parent::createFromFormat($format, $time)
+            : parent::createFromFormat($format, $time, static::safeCreateDateTimeZone($timezone));
 
         if ($dateTime instanceof DateTime) {
-            return self::instance($dateTime);
+            return static::fromDateTime($dateTime);
         }
 
         $errors = static::getLastErrors();
@@ -223,7 +241,7 @@ class EBDateTime extends DateTime
      */
     public function formatAsNumericWeekday()
     {
-        return $this->format(static::getNumericWeekdayFormat());
+        return (int) $this->format(static::getNumericWeekdayFormat());
     }
 
     /**
@@ -231,6 +249,9 @@ class EBDateTime extends DateTime
      */
     public function formatAsWeekNumberOfYear()
     {
-        return $this->format(static::getWeekNumberOfYearFormat());
+        return (int) $this->format(static::getWeekNumberOfYearFormat());
     }
+
+    public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
+
 }
