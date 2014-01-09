@@ -23,8 +23,8 @@ use DateTimeZone;
 class EBDateTime extends DateTime
 {
     /**
-     * @param string $time
-     * @param mixed  $timezone
+     * @param string                   $time
+     * @param null|string|DateTimeZone $timezone
      */
     public function __construct($time = 'now', $timezone = null)
     {
@@ -48,7 +48,7 @@ class EBDateTime extends DateTime
     }
 
     /**
-     * @param DateTimezone $timezone
+     * @param DateTimezone|null $timezone
      *
      * @return EBDateTime
      */
@@ -68,8 +68,8 @@ class EBDateTime extends DateTime
     }
 
     /**
-     * @param int          $timestamp
-     * @param DateTimeZone $timezone
+     * @param int               $timestamp
+     * @param DateTimeZone|null $timezone
      *
      * @return EBDateTime
      */
@@ -100,9 +100,9 @@ class EBDateTime extends DateTime
     }
 
     /**
-     * @param string $format
-     * @param string $time
-     * @param mixed   $timezone
+     * @param string                   $format
+     * @param string                   $time
+     * @param string|DateTimeZone|null $timezone
      *
      * @return EBDateTime
      *
