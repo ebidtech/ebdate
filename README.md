@@ -2,7 +2,7 @@
 
 Simple wrapper around DateTime.
 
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/ebidtech/ebdate/badges/quality-score.png?s=0d65743216585bb6c490b0408195a061d4b68ba4)](https://scrutinizer-ci.com/g/ebidtech/ebdate/) [![Dependency Status](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c/badge.png)](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c)
+[![Latest Stable Version](https://poser.pugx.org/ebidtech/ebdate/v/stable.png)](https://packagist.org/packages/ebidtech/ebdate) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/ebidtech/ebdate/badges/quality-score.png?s=0d65743216585bb6c490b0408195a061d4b68ba4)](https://scrutinizer-ci.com/g/ebidtech/ebdate/) [![Dependency Status](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c/badge.png)](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c)
 
 ## Requirements ##
 
