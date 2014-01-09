@@ -251,7 +251,4 @@ class EBDateTime extends DateTime
     {
         return (int) $this->format(static::getWeekNumberOfYearFormat());
     }
-
-    public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
-
 }

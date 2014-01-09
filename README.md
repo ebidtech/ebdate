@@ -2,6 +2,8 @@
 
 Simple wrapper around DateTime.
 
+[![Dependency Status](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c/badge.png)](https://www.versioneye.com/user/projects/52ced7d1ec13756dd000007c)
+
 ## Requirements ##
 
 * PHP >= 5.4
