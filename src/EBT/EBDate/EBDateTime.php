@@ -17,6 +17,8 @@ use DateTimeZone;
 
 /**
  * EBDateTime
+ *
+ * @SuppressWarnings(PHPMD.TooManyMethods)
  */
 class EBDateTime extends DateTime
 {
@@ -27,7 +29,7 @@ class EBDateTime extends DateTime
     public function __construct($time = 'now', $timezone = null)
     {
         $timezone === null
-            ? parent::__construct($time)
+            ? parent::__construct($time, null)
             : parent::__construct($time, static::safeCreateDateTimeZone($timezone));
     }
 
@@ -46,7 +48,7 @@ class EBDateTime extends DateTime
     }
 
     /**
-     * @param $timezone
+     * @param DateTimezone $timezone
      *
      * @return EBDateTime
      */
