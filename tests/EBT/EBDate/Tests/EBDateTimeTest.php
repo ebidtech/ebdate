@@ -81,4 +81,12 @@ class EBDateTimeTest extends TestCase
         $this->assertInternalType('integer', $weekNumber);
         $this->assertEquals(2, $weekNumber);
     }
+
+    public function testDifferences()
+    {
+        // in seconds
+        $date1 = EBDateTime::createFromFormatUTC('Y-m-d H:i:s', '2014-01-09 19:30:20');
+        $date2 = EBDateTime::createFromFormatUTC('Y-m-d H:i:s', '2014-01-09 19:35:30');
+        $this->assertEquals(310, $date1->diffInSeconds($date2));
+    }
 }

@@ -253,4 +253,25 @@ class EBDateTime extends DateTime
     {
         return (int) $this->format(static::getWeekNumberOfYearFormat());
     }
+
+    /*
+     |--------------------------------------------------------------------------
+     | Differences
+     |--------------------------------------------------------------------------
+     */
+
+    /**
+     * Get the difference in seconds
+     *
+     * @param  EBDateTime  $dateTime
+     * @param  boolean     $abs Get the absolute of the difference
+     *
+     * @return integer
+     */
+    public function diffInSeconds(EBDateTime $dateTime, $abs = true)
+    {
+        $value = $dateTime->getTimestamp() - $this->getTimestamp();
+
+        return $abs ? abs($value) : $value;
+    }
 }
