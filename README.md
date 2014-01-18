@@ -6,7 +6,7 @@ Simple wrapper around DateTime.
 
 ## Requirements ##
 
-* PHP >= 5.4
+* PHP >= 5.3
 
 ## Installation ##
 
