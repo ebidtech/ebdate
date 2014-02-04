@@ -67,7 +67,7 @@ class EBDateTimeHandler implements SubscribingHandlerInterface
      * @param string $defaultTimezone
      * @param bool   $xmlCData
      */
-    public function __construct($defaultFormat = \DateTime::ISO8601, $defaultTimezone = 'UTC', $xmlCData = true)
+    public function __construct($defaultFormat = 'Y-m-d H:i:s', $defaultTimezone = 'UTC', $xmlCData = true)
     {
         $this->defaultFormat = $defaultFormat;
         $this->defaultTimezone = new \DateTimeZone($defaultTimezone);

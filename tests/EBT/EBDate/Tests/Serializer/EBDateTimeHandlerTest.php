@@ -46,11 +46,11 @@ class EBDateTimeHandlerTest extends TestCase
         $date = EBDateTime::createFromFormat(EBDateTime::getDateTimeFormat(), $dateStr);
 
         $dateJson = $this->serializer->serialize($date, 'json');
-        $this->assertEquals('"2014-01-09T19:20:30+0000"', $dateJson);
+        $this->assertEquals('"2014-01-09 19:20:30"', $dateJson);
 
         $dateXml = $this->serializer->serialize($date, 'xml');
         $this->assertEquals(
-            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<result><![CDATA[2014-01-09T19:20:30+0000]]></result>\n",
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<result><![CDATA[2014-01-09 19:20:30]]></result>\n",
             $dateXml
         );
 
