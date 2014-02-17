@@ -100,6 +100,16 @@ class EBDateTime extends DateTime
     }
 
     /**
+     * @param string $time
+     *
+     * @return EBDateTime
+     */
+    public static function createFromDateFormat($time)
+    {
+        return static::createFromFormat(EBDateTime::getDateFormat(), $time);
+    }
+
+    /**
      * @param string                   $format
      * @param string                   $time
      * @param string|DateTimeZone|null $timezone
