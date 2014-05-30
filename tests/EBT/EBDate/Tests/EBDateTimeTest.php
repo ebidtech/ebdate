@@ -72,6 +72,19 @@ class EBDateTimeTest extends TestCase
         );
     }
 
+    public function testCreateFromDateTimeFormat()
+    {
+        $date = '2014-12-12 08:20:37';
+        $ebDateTime = EBDateTime::createFromDateTimeFormat($date);
+
+        $this->assertInstanceOf('EBT\EBDate\EBDateTime', $ebDateTime);
+        $this->assertEquals(
+             $date,
+                 $ebDateTime->formatAsString()
+        );
+    }
+
+
     public function testCreateFromFormatInvalid()
     {
         $date = EBDateTime::createFromFormat('Y-m-d', '1999-04-25');
